@@ -1,0 +1,9 @@
+Important Velvet Info/Summary
+Velvet is a program that performs de novo assembly of sequence reads.  This means that it is capable of assemble short reads without the use of a reference genome.  Here are the primary velvet functions:
+./velveth
+./velvetg
+
+./velveth must be run before ./velvetg.  Be sure to use ./ for giving your command in the terminal window!
+For help running either of these two functions, type the function into the command line and hit enter without entering any parameters.
+For purpose and parameter input, go here:
+http://helix.nih.gov/Applications/velvet_manual.pdf

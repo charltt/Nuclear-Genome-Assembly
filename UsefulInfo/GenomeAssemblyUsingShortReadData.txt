@@ -1,0 +1,35 @@
+General Unix Note
+Any time you create a new file or directory (either manually or using an application) be sure to run “change mode” or chmod on the files/directories to change the access permissions.  Otherwise you or the applications may not be able to i.e. - access files, overwrite files or write to a directory.
+Genome Assembly with Short Read Sequences
+There are quite a few short read assemblers freely available to download.  This guide will walk through two popular assemblers, MAQ (assembles short reads using a reference sequence as a guide) and Velvet (a de novo assembler).
+SeqAnswers.com is an excellent website for keeping up with the latest software being used by the Next Generation community.
+General Info
+Files and Formats 
+The output text files from Illumina reads are named in the following format:  
+s_4_sequence.txt  
+where the "s" is the sample name and the "4" is the flowcell lane number 
+A single entry in the seq.txt file is in SCARF format and looks like this: 
+HWUSI-EAS174:8:1:7:1373#0/1:TTATATAATAAAGTGCTATCAAATANNNGNNNNNNNGANT:aa`a^``]_YO_WUZa]aBBBBBBBBBBBBBBBBBBBBBB
+The information is separated into three columns using “:”.  The first column is a unique identifier for the sequence including sample name and position information on the flowcell.  The second column is the nucleotide sequence and the third column is the quality scores for the read.
+To convert Solexa SCARF (ascii symbols) format to fastq use the following unix command:
+awk 'BEGIN { FS=":" } { print "@" $1 "-" $2 "-" $3 "-" $4 "-" $5 "\n" $6 "\n+" $1 "-" $2 "-" $3 "-" $4 "-" $5 "\n" $7}' s_4_sequence.txt > s_4.fastq
+ 
+Input File Converters  
+The numerous short read assemblers currently available require a variety of different input file formats based on the seq.txt alone or along with the prb.txt files (in other words, some assemblers do not take the base quality scores into account).  Fortunately, there is a very nice tool in the maq package (latest release) called fq_all2std.pl 
+Usage: fq_all2std.pl <Command> <seq.txt file> <prb.txt file (opt)> > <outfile.txt>
+Command	Function
+scarf2std	Convert SCARF format to the standard/Sanger FASTQ
+fqint2std	Convert FASTQ-int format to the standard/Sanger FASTQ
+sol2std	Solexa/Illumina FASTQ to the standard FASTQ
+fa2std	Convert FASTA to the standard FASTQ
+seqprb2std	Convert .seq and .prb files to the standard FASTQ
+fq2fa	Convert various FASTQ-like format to FASTA
+export2sol	Convert Solexa export format to Solexa FASTQ
+export2std	Convert Solexa export format to Sanger FASTQ
+csfa2std	Convert AB SOLiD read format to Sanger FASTQ
+This tool should be stored in /usr/local/bin and with permissions that allow everyone to read, write and execute the file (chmod 777)
+
+The programs reviewed here use the following formats:
+Program 	Reference Sequence File Format 	Short Read Sequence Format 
+Maq 	fasta 	fastq 
+Velvet		fasta

@@ -1,0 +1,19 @@
+/Volumes/MacintoshHD1/Applications/Assembler_Programs/maq-0.7.1/maq mapmerge out.map $mapmerge
+
+/Volumes/MacintoshHD1/Applications/Assembler_Programs/maq-0.7.1/maq mapcheck /Volumes/MacintoshHD2/NextGen/Genomes.dir/Trichinella.dir/Nuc.dir/Trich.genome.bfa  out.map > mapcheck.txt
+
+/Volumes/MacintoshHD1/Applications/Assembler_Programs/maq-0.7.1/maq assemble concsensus.cns /Volumes/MacintoshHD2/NextGen/Genomes.dir/Trichinella.dir/Nuc.dir/Trich.genome.bfa  out.map 2>assemble.log
+
+/Volumes/MacintoshHD1/Applications/Assembler_Programs/maq-0.7.1/maq cns2fq  concsensus.cns > cns.fq
+
+/Volumes/MacintoshHD1/Applications/Assembler_Programs/maq-0.7.1/maq cns2snp  concsensus.cns > cns.snp
+
+maq.pl SNPfilter cns.snp > out.filtered.snp
+
+/Volumes/MacintoshHD1/Applications/Assembler_Programs/maq-0.7.1/maq  pileup /Volumes/MacintoshHD2/NextGen/Genomes.dir/Trichinella.dir/Nuc.dir/Trich.genome.bfa  out.map > out.pileup
+
+/Volumes/MacintoshHD1/Applications/Assembler_Programs/maq-0.7.1/maq mapview out.map > out.aln.txt
+
+maqindex -l 1024 -c concsensus.cns -i out.map
+
+#maqview -c concsensus.cns out.map

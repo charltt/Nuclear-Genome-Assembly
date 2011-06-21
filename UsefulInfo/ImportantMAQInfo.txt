@@ -1,0 +1,18 @@
+Important Maq Info/Summary
+MAQ is a program that will assemble sequence reads into scaffolds and contigs when given a reference to use for comparison.  There are a number of different functions that MAQ uses to put its data in the proper form and assemble the reads.  These steps are not automated and must be completed in the correct order by the user each time.  Here is a list of the most useful functions/the functions I have used so far:
+maq fasta2bfa
+maq fastq2bfq
+maq map
+maq mapmerge
+maq mapcheck
+maq assemble
+maq cns2fq
+maq cns2snp
+maq pileup
+maq mapview
+maqindex 
+maqview
+
+To receive help in the terminal window, type <maq>.
+For purpose and parameter usage, go here:
+http://maq.sourceforge.net/maq-manpage.shtml

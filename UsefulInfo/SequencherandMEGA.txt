@@ -1,0 +1,11 @@
+Sequencher/Mega Info and Summary
+Sequencher and MEGA are alignment and analysis tools that take a gene sequence (or sequences) as input and can align and analyze them.  Duh…  Things to remember about both:
+
+Sequencher
+•	Click on an assembled Contig[…] to bring up the Overview screen.  From here, click on the bottom aligned portion and use <Command N> then <spacebar> to cycle through SNPS
+•	Contigs can be dissolved and have nodes removed from them.
+•	When deleting excess bases in the beginning of a sequence, use <shift-[> to highlight the desired portion then <delete> to remove it.  When deleting excess bases from the end of a sequence use <shift-]> to highlight the desired portion then <backspace> to remove it.
+•	To combine contigs into one sequence:  trim so there is no overlap, export them as a consensus.
+MEGA
+•	The Distances menu contains a way to compute syn-nonsynonymous rate variation
+•	Codon based Z-test is in the Selection menu
