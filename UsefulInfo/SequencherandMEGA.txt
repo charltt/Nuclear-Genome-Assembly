@@ -9,3 +9,5 @@ Sequencher
 MEGA
 •	The Distances menu contains a way to compute syn-nonsynonymous rate variation
 •	Codon based Z-test is in the Selection menu
+
+Use the Caption button to give you a breakdown of an analysis that was just performed.  Will give you the general description as well as the specifics about the data analyzed
