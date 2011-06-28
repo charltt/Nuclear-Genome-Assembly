@@ -13,6 +13,8 @@ maq mapview
 maqindex 
 maqview
 
+MAQ does not like its sequences to include characters other than A, T, C, G, N.  Which means, no Xs.
+
 To receive help in the terminal window, type <maq>.
 For purpose and parameter usage, go here:
 http://maq.sourceforge.net/maq-manpage.shtml
