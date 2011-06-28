@@ -1,0 +1,7 @@
+This document will contain random bits of info that are useful to the project but do not necessarily fit into the other divisions.
+
+
+- Use this command to split a multi-fasta file into many single fasta files (it will print a warning, but it works).  perl -ne 'BEGIN{$/=">"}if(/^\s*(\S+)/){open(F,">$1")||warn"$1 write failed:$!\n";chomp;print F ">", $_}'
+The original command is contained in an email at the address charltt@allegheny.edu under a subject: Fwd: T1 Flowcell Lanes.
+
+
